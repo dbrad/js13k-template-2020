@@ -8,6 +8,7 @@ export async function loadAsset(name: string): Promise<{}>
     // @ifdef DEBUG
     console.log("FETCHING ASSET => " + name);
     // @endif
+
     const raw = document.querySelector("#" + name).innerHTML;
     const asset: AssetJson = JSON.parse(lzw_decode(raw));
 
@@ -19,6 +20,7 @@ export async function loadAsset(name: string): Promise<{}>
     {
         return loadSpriteSheet(asset);
     }
+
     // @ifdef DEBUG
     throw new Error("UNDEFINED ASSET TYPE => " + asset.type);
     // @endif

@@ -29,6 +29,7 @@ window.addEventListener("load", async () =>
 {
   // @ifdef DEBUG
   console.log(`DEBUG BUILD`);
+  document.title = `Game - DEBUG`;
   // @endif
   const canvas = document.querySelector("canvas");
   canvas.width = screenWidth;
@@ -41,23 +42,31 @@ window.addEventListener("load", async () =>
   function loop(now: number): void
   {
     requestAnimationFrame(loop);
+    // @ifdef DEBUG
     now = Math.round(now);
+    // @endif
+
     delta = now - then;
     then = now;
     clear();
+
+    // @ifdef DEBUG
     for (let x = 0; x < screenWidth / 16; x++)
     {
       for (let y = 0; y < screenHeight / 16; y++)
       {
-        pushQuad(x * 16, y * 16, 16, 16, colourToHex(255, random(0, 255), random(0, 255), random(0, 255)));
+        pushQuad(x * 16, y * 16, 16, 16, colourToHex(255, random(100, 255), random(0, 125), random(0, 125)));
       }
     }
+    // @endif
+
     flush();
     // @ifdef DEBUG
     tickStats(delta, now, performance.now());
-    // @endif
     flush();
+    // @endif
   }
+
   await loadAsset("sheet");
   setClearColour(25, 25, 25);
   then = performance.now();

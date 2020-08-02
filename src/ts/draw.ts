@@ -77,7 +77,8 @@ export function parseText(text: string, params: TextParams = { colour: 0xFFFFFFF
     if (params.wrap === 0)
     {
       lines = [allWords.join(" ")];
-    } else
+    }
+    else
     {
       let line: string[] = [];
       for (const word of allWords)
@@ -123,7 +124,8 @@ export function pushText(text: string, x: number, y: number, params: TextParams 
     if (params.textAlign === Align.Center)
     {
       alignmentOffset = ~~((-lineLength + (1 * params.scale)) / 2);
-    } else if (params.textAlign === Align.Right)
+    }
+    else if (params.textAlign === Align.Right)
     {
       alignmentOffset = ~~-(lineLength - (1 * params.scale));
     }

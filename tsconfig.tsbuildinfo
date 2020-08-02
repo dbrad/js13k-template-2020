@@ -167,32 +167,32 @@
         "affectsGlobalScope": false
       },
       "./src/ts/texture.ts": {
-        "version": "5bd747763076167612cf4909fed699237ffc8fa30c1a38ea1facc5ce4693e320",
+        "version": "bf9573710a4b9ae526105b20ae573e895d4ca52f9fbe6999d3d749bfe22880f2",
         "signature": "61d849838bbbe4eceed315c3f324dec33dcf695288eea3132065f50bebd27ac7",
         "affectsGlobalScope": false
       },
       "./src/ts/lzw.ts": {
-        "version": "99e04f6699b6cf2a72cc959e7533337bca1abc6c185033f92b2c9cdca603bef5",
+        "version": "08d081ee711c18afc2c944833fb2815ca239bc666b3e13e7e0779f32f2cb45f4",
         "signature": "a0e76de7332255d6f096f9c372debe64d05e4030f62115ace5b758b174ede154",
         "affectsGlobalScope": false
       },
       "./src/ts/asset.ts": {
-        "version": "e89b1a24ea7ccede52b6febe5d61c3f36632fbc90064a6512f5774ab7c40d89e",
+        "version": "a7fa6df1a4e602ba5d72a5558af0bfa94bd1ca82afc9b2c7dd3180015cce4dd5",
         "signature": "ea83fe80180e24bd549615ad36aaa19ef877f0feab032e96044bcb4f305092d2",
         "affectsGlobalScope": false
       },
       "./src/ts/draw.ts": {
-        "version": "ade4be2ee8990681ad15a81dccaa635aee11a3f79c42cf2de6d23393dc75307a",
+        "version": "0ce000b87f3534fab3fa2ebfaefd74f30e7d843e539dcbce73b8a31c5e385d3f",
         "signature": "b137b8d139482dcee300c810f9fbe61b568286169f92f58df0e16f1975a297cb",
         "affectsGlobalScope": false
       },
       "./src/ts/stats.ts": {
-        "version": "303c593d3a85e98c28a5cd18fb92ba1c209d68e0143a69f0dc09f71a34804d5e",
+        "version": "6e5aa6557083b757f14fafc49f8edb53814bce44082f861515ae00ac213b3108",
         "signature": "e033f76fb71d5343df16b61dee9e4a96e9387b31c4392ade5261905d29c3028d",
         "affectsGlobalScope": false
       },
       "./src/ts/game.ts": {
-        "version": "f5db6a403453d7c9698b70be881fd9d2d81de3eea8ba45d49b57920cd01ab581",
+        "version": "dbb02c92234271f014ad085e9a798119a21bec10d68fc7004529eef25bd72a75",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },

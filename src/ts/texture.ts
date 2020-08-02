@@ -64,7 +64,8 @@ export function loadSpriteSheet(sheet: TextureAssetJson): Promise<any>
               u1: (texture.x + texture.w) / image.width,
               v1: (texture.y + texture.h) / image.height
             });
-          } else
+          }
+          else
           {
             for (let ox: number = texture.x, i: number = 0; ox < image.width; ox += texture.w)
             {
@@ -87,7 +88,8 @@ export function loadSpriteSheet(sheet: TextureAssetJson): Promise<any>
         resolve();
       });
       image.src = sheet.url;
-    } catch (err)
+    }
+    catch (err)
     {
       reject(err);
     }

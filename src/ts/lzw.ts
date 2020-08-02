@@ -2,7 +2,6 @@ export function lzw_decode(s: string): string
 {
     const dict = new Map(); // Use a Map!
     const data = Array.from(s + "");
-    //var data = (s + "").split("");
     let currChar = data[0];
     let oldPhrase = currChar;
     const out = [currChar];

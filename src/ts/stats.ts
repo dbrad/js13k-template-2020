@@ -1,6 +1,6 @@
+// @ifdef DEBUG
 import { Align, pushQuad, pushText } from "./draw";
 
-// @ifdef DEBUG
 let frameCount: number = 0;
 let fps: number = 60;
 let lastFps: number = 0;
