@@ -1,5 +1,7 @@
+import { clear, flush, initGL, setClearColour } from "./gl";
+
 import { loadAsset } from "./asset";
-import { initGL, flush, clear, setClearColour } from "./gl";
+import { pushQuad } from "./draw";
 // @ifdef DEBUG
 import { tickStats } from "./stats";
 // @endif
@@ -7,32 +9,57 @@ import { tickStats } from "./stats";
 const screenWidth = 512;
 const screenHeight = 288;
 
-window.addEventListener( "load", async () =>
+function random(min: number, max: number): number
+{
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function colourToHex(a: number, b: number, g: number, r: number): number
+{
+  let out: number = 0x0;
+  out = ((out | (a & 0xff)) << 8) >>> 0;
+  out = ((out | (b & 0xff)) << 8) >>> 0;
+  out = ((out | (g & 0xff)) << 8) >>> 0;
+  out = ((out | (r & 0xff))) >>> 0;
+  return out;
+}
+
+
+window.addEventListener("load", async () =>
 {
   // @ifdef DEBUG
-  console.log( `DEBUG BUILD` );
+  console.log(`DEBUG BUILD`);
   // @endif
-  const canvas = document.querySelector( "canvas" );
+  const canvas = document.querySelector("canvas");
   canvas.width = screenWidth;
   canvas.height = screenHeight;
 
-  initGL( canvas );
+  initGL(canvas);
 
   let then = 0;
   let delta = 0;
-  function loop( now: number ): void
+  function loop(now: number): void
   {
+    requestAnimationFrame(loop);
+    now = Math.round(now);
     delta = now - then;
     then = now;
     clear();
+    for (let x = 0; x < screenWidth / 16; x++)
+    {
+      for (let y = 0; y < screenHeight / 16; y++)
+      {
+        pushQuad(x * 16, y * 16, 16, 16, colourToHex(255, random(0, 255), random(0, 255), random(0, 255)));
+      }
+    }
+    flush();
     // @ifdef DEBUG
-    tickStats( delta, now );
+    tickStats(delta, now, performance.now());
     // @endif
     flush();
-    requestAnimationFrame( loop );
   }
-  await loadAsset( "sheet" );
-  setClearColour( 25, 25, 25 );
+  await loadAsset("sheet");
+  setClearColour(25, 25, 25);
   then = performance.now();
-  requestAnimationFrame( loop );
-} );
+  requestAnimationFrame(loop);
+});

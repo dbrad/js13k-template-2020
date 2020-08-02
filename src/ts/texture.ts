@@ -29,67 +29,67 @@ export type TextureAssetJson = {
 export const ATLAS_CACHE: Map<string, WebGLTexture> = new Map();
 export const TEXTURE_CACHE: Map<string, Texture> = new Map();
 
-export function loadSpriteSheet( sheet: TextureAssetJson ): Promise<any>
+export function loadSpriteSheet(sheet: TextureAssetJson): Promise<any>
 {
   const image: HTMLImageElement = new Image();
   // @ifdef DEBUG
-  console.log( "LOADING SPRITESHEET => " + sheet.name );
+  console.log("LOADING SPRITESHEET => " + sheet.name);
   // @endif
 
-  return new Promise( ( resolve, reject ) =>
+  return new Promise((resolve, reject) =>
   {
     try
     {
-      image.addEventListener( "load", () =>
+      image.addEventListener("load", () =>
       {
         // @ifdef DEBUG
-        console.log( "CREATING TEXTURE => " + sheet.name );
+        console.log("CREATING TEXTURE => " + sheet.name);
         // @endif
-        const glTexture: WebGLTexture = gl.createTexture( image );
-        ATLAS_CACHE.set( sheet.name, glTexture );
+        const glTexture: WebGLTexture = gl.createTexture(image);
+        ATLAS_CACHE.set(sheet.name, glTexture);
 
-        for ( const texture of sheet.textures )
+        for (const texture of sheet.textures)
         {
-          if ( texture.type === "sprite" )
+          if (texture.type === "sprite")
           {
             // @ifdef DEBUG
-            console.log( "LOADING SPRITE => " + texture.name );
+            console.log("LOADING SPRITE => " + texture.name);
             // @endif
-            TEXTURE_CACHE.set( texture.name as string, {
+            TEXTURE_CACHE.set(texture.name as string, {
               atlas: glTexture,
               w: texture.w,
               h: texture.h,
               u0: texture.x / image.width,
               v0: texture.y / image.height,
-              u1: ( texture.x + texture.w ) / image.width,
-              v1: ( texture.y + texture.h ) / image.height
-            } );
+              u1: (texture.x + texture.w) / image.width,
+              v1: (texture.y + texture.h) / image.height
+            });
           } else
           {
-            for ( let ox: number = texture.x, i: number = 0; ox < image.width; ox += texture.w )
+            for (let ox: number = texture.x, i: number = 0; ox < image.width; ox += texture.w)
             {
               // @ifdef DEBUG
-              console.log( "LOADING SPRITE ROW" );
+              console.log("LOADING SPRITE ROW");
               // @endif
-              TEXTURE_CACHE.set( texture.name[ i ], {
+              TEXTURE_CACHE.set(texture.name[i], {
                 atlas: glTexture,
                 w: texture.w,
                 h: texture.h,
                 u0: ox / image.width,
                 v0: texture.y / image.height,
-                u1: ( ox + texture.w ) / image.width,
-                v1: ( texture.y + texture.h ) / image.height
-              } );
+                u1: (ox + texture.w) / image.width,
+                v1: (texture.y + texture.h) / image.height
+              });
               i++;
             }
           }
         }
         resolve();
-      } );
+      });
       image.src = sheet.url;
-    } catch ( err )
+    } catch (err)
     {
-      reject( err );
+      reject(err);
     }
-  } );
+  });
 };

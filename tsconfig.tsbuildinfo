@@ -162,37 +162,37 @@
         "affectsGlobalScope": false
       },
       "./src/ts/gl.ts": {
-        "version": "954acaec1a6dbe53f3aab1f01476cd52aa5bff31fb745a666603f254d721189b",
+        "version": "57000c2dd4185624846ec9dccd7df38819f1d2d8ad443e6f28211b721fd169b3",
         "signature": "66dfea37d00c73dabaca2900950933114ea585df65349e6040beb51886b67f1e",
         "affectsGlobalScope": false
       },
       "./src/ts/texture.ts": {
-        "version": "e7fce5e51a3091b7a66809a95e0642f2ac73a6be199a4ac347654c5ec50185db",
+        "version": "5bd747763076167612cf4909fed699237ffc8fa30c1a38ea1facc5ce4693e320",
         "signature": "61d849838bbbe4eceed315c3f324dec33dcf695288eea3132065f50bebd27ac7",
         "affectsGlobalScope": false
       },
       "./src/ts/lzw.ts": {
-        "version": "0815d759a4aec72cf35dd982e2e937d9aaa725858ca991f11e68dbb14af6780e",
+        "version": "99e04f6699b6cf2a72cc959e7533337bca1abc6c185033f92b2c9cdca603bef5",
         "signature": "a0e76de7332255d6f096f9c372debe64d05e4030f62115ace5b758b174ede154",
         "affectsGlobalScope": false
       },
       "./src/ts/asset.ts": {
-        "version": "64e7899853e1bbe430d096ed64193fb1402db503bd2c129cd2fe427c3725bc8d",
+        "version": "e89b1a24ea7ccede52b6febe5d61c3f36632fbc90064a6512f5774ab7c40d89e",
         "signature": "ea83fe80180e24bd549615ad36aaa19ef877f0feab032e96044bcb4f305092d2",
         "affectsGlobalScope": false
       },
       "./src/ts/draw.ts": {
-        "version": "b0c9df04c5486527d86d349f646bcb02a3bac9f6c5906365d5a81d65ac7ff7ce",
+        "version": "ade4be2ee8990681ad15a81dccaa635aee11a3f79c42cf2de6d23393dc75307a",
         "signature": "b137b8d139482dcee300c810f9fbe61b568286169f92f58df0e16f1975a297cb",
         "affectsGlobalScope": false
       },
       "./src/ts/stats.ts": {
-        "version": "9687063fa71c4510a8a91dfe23c17d2a16bb3316ef175ef06b0b6739d6ece132",
-        "signature": "d38659c1a5150bc1d257226859a0c0d667460fab30c12289900f54c57cb4f2cf",
+        "version": "303c593d3a85e98c28a5cd18fb92ba1c209d68e0143a69f0dc09f71a34804d5e",
+        "signature": "e033f76fb71d5343df16b61dee9e4a96e9387b31c4392ade5261905d29c3028d",
         "affectsGlobalScope": false
       },
       "./src/ts/game.ts": {
-        "version": "82fa561658a49e6b9de78b2ee9c97781576416109075d3f6736c27dafaa93d60",
+        "version": "f5db6a403453d7c9698b70be881fd9d2d81de3eea8ba45d49b57920cd01ab581",
         "signature": "f761c91419d0a89422a0004ef1a92929dd4d2d5e5c16758654d8b0467d1998c6",
         "affectsGlobalScope": false
       },
@@ -1148,6 +1148,7 @@
         "./node_modules/@types/node/ts3.2/util.d.ts",
         "./node_modules/@types/node/util.d.ts",
         "./src/ts/asset.ts",
+        "./src/ts/draw.ts",
         "./src/ts/gl.ts",
         "./src/ts/stats.ts"
       ],
